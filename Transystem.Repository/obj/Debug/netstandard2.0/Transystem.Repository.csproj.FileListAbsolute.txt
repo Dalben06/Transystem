@@ -1,0 +1,12 @@
+C:\Users\leoda\Desktop\TRANSYSTEM2.0\Transystem.Repository\bin\Debug\netstandard2.0\Transystem.Repository.deps.json
+C:\Users\leoda\Desktop\TRANSYSTEM2.0\Transystem.Repository\bin\Debug\netstandard2.0\Transystem.Repository.dll
+C:\Users\leoda\Desktop\TRANSYSTEM2.0\Transystem.Repository\bin\Debug\netstandard2.0\Transystem.Repository.pdb
+C:\Users\leoda\Desktop\TRANSYSTEM2.0\Transystem.Repository\bin\Debug\netstandard2.0\Transystem.Domain.dll
+C:\Users\leoda\Desktop\TRANSYSTEM2.0\Transystem.Repository\bin\Debug\netstandard2.0\Transystem.Domain.pdb
+C:\Users\leoda\Desktop\TRANSYSTEM2.0\Transystem.Repository\obj\Debug\netstandard2.0\Transystem.Repository.csprojAssemblyReference.cache
+C:\Users\leoda\Desktop\TRANSYSTEM2.0\Transystem.Repository\obj\Debug\netstandard2.0\Transystem.Repository.csproj.CoreCompileInputs.cache
+C:\Users\leoda\Desktop\TRANSYSTEM2.0\Transystem.Repository\obj\Debug\netstandard2.0\Transystem.Repository.AssemblyInfoInputs.cache
+C:\Users\leoda\Desktop\TRANSYSTEM2.0\Transystem.Repository\obj\Debug\netstandard2.0\Transystem.Repository.AssemblyInfo.cs
+C:\Users\leoda\Desktop\TRANSYSTEM2.0\Transystem.Repository\obj\Debug\netstandard2.0\Transystem.Repository.csproj.CopyComplete
+C:\Users\leoda\Desktop\TRANSYSTEM2.0\Transystem.Repository\obj\Debug\netstandard2.0\Transystem.Repository.dll
+C:\Users\leoda\Desktop\TRANSYSTEM2.0\Transystem.Repository\obj\Debug\netstandard2.0\Transystem.Repository.pdb
