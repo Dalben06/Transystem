@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Transystem.API.Models
 {
-    public class AddressModel
+    public class DriverModel
     {
 
         public int Id { get; set; }
@@ -13,9 +13,10 @@ namespace Transystem.API.Models
         public DateTime UpdateDate { get; set; }
         public DateTime? DeleteDate { get; set; }
         public int IsDeleted { get; set; }
-        public string Street { get; set; }
-        public string Number { get; set; }
-        public string Complement { get; set; }
-        public string ZipCode { get; set; }
+        public string Name { get; set; }
+        public string DocumentNumber { get; set; }
+        public DateTime BirthDate { get; set; }
+        public string DriverLicense { get; set; }
+        public List<TruckModel> Trucks { get; set; }
     }
 }

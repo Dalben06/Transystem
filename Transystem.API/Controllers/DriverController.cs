@@ -13,13 +13,13 @@ namespace Transystem.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ClientController : ControllerBase
+    public class DriverController : ControllerBase
     {
 
-        public IClientRepository _Repository { get; }
+        public IDriverRepository _Repository { get; }
         public IMapper _mapper { get; }
 
-        public ClientController(IClientRepository repository, IMapper mapper)
+        public DriverController(IDriverRepository repository, IMapper mapper)
         {
             _Repository = repository;
             _mapper = mapper;
@@ -30,9 +30,9 @@ namespace Transystem.API.Controllers
         {
             try
             {
-                var results = await _Repository.GetAllClientAsync();
-                var client = _mapper.Map<IEnumerable<ClientModel>>(results);
-                return Ok(client);
+                var results = await _Repository.GetAllDriverAsync();
+                var Driver = _mapper.Map<IEnumerable<DriverModel>>(results);
+                return Ok(Driver);
             }
             catch (System.Exception ex)
             {
@@ -44,15 +44,15 @@ namespace Transystem.API.Controllers
 
 
         [HttpPost]
-        public async Task<IActionResult> Post(ClientModel model)
+        public async Task<IActionResult> Post(DriverModel model)
         {
             try
             {
-                var Client = _mapper.Map<Client>(model);
-                _Repository.add(Client);
+                var Driver = _mapper.Map<Driver>(model);
+                _Repository.add(Driver);
 
                 if (await _Repository.SaveChangesAsync())
-                    return Created($"/api/client/{Client.Id}", _mapper.Map<ClientModel>(Client));
+                    return Created($"/api/Driver/{Driver.Id}", _mapper.Map<DriverModel>(Driver));
             }
             catch (System.Exception)
             {
@@ -63,23 +63,23 @@ namespace Transystem.API.Controllers
             return BadRequest();
         }
 
-        [HttpPut("{ClientId}")]
-        public async Task<IActionResult> Put(int ClientId, ClientModel model)
+        [HttpPut("{DriverId}")]
+        public async Task<IActionResult> Put(int DriverId, DriverModel model)
         {
             try
             {
-                var client = await _Repository.GetClientByIdAsync(ClientId);
+                var Driver = await _Repository.GetDriverByIdAsync(DriverId);
 
-                if (client == null)
+                if (Driver == null)
                 {
                     return NotFound();
                 }
 
-                var clientw = _mapper.Map<Client>(model);
+                var Driverw = _mapper.Map<Driver>(model);
 
-                _Repository.Update(clientw);
+                _Repository.Update(Driverw);
                 if (await _Repository.SaveChangesAsync())
-                    return Created($"/api/client/{clientw.Id}", _mapper.Map(model, clientw));
+                    return Created($"/api/Driver/{Driverw.Id}", _mapper.Map(model, Driverw));
             }
             catch (System.Exception)
             {
@@ -96,15 +96,15 @@ namespace Transystem.API.Controllers
         {
             try
             {
-                var Client = await _Repository.GetClientByIdAsync(id);
+                var Driver = await _Repository.GetDriverByIdAsync(id);
 
-                if (Client == null)
+                if (Driver == null)
                 {
                     return NotFound();
                 }
-                _Repository.Delete(Client);
+                _Repository.Delete(Driver);
                 if (await _Repository.SaveChangesAsync())
-                    return Created($"/api/client/{Client.Id}", _mapper.Map<Client>(Client));
+                    return Created($"/api/Driver/{Driver.Id}", _mapper.Map<Driver>(Driver));
             }
             catch (System.Exception)
             {
@@ -120,9 +120,9 @@ namespace Transystem.API.Controllers
         {
             try
             {
-                var results = await _Repository.GetClientByIdAsync(Id);
-                var client = _mapper.Map<ClientModel>(results);
-                return Ok(client);
+                var results = await _Repository.GetDriverByIdAsync(Id);
+                var Driver = _mapper.Map<DriverModel>(results);
+                return Ok(Driver);
             }
             catch (System.Exception ex)
             {
@@ -138,9 +138,9 @@ namespace Transystem.API.Controllers
         {
             try
             {
-                var results = await _Repository.GetClientAsyncByName(Name);
-                var client = _mapper.Map<IEnumerable<ClientModel>>(results);
-                return Ok(client);
+                var results = await _Repository.GetDriverAsyncByName(Name);
+                var Driver = _mapper.Map<IEnumerable<DriverModel>>(results);
+                return Ok(Driver);
             }
             catch (System.Exception ex)
             {
@@ -149,8 +149,6 @@ namespace Transystem.API.Controllers
             }
 
         }
-
-
 
     }
 }

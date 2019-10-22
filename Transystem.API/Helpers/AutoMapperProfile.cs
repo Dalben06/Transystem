@@ -14,6 +14,9 @@ namespace Transystem.API.Helpers
         {
             CreateMap<Client, ClientModel>().ReverseMap();
             CreateMap<Address, AddressModel>().ReverseMap();
+            CreateMap<Driver, DriverModel>().ReverseMap();
+            CreateMap<Trailer, TrailerModel>().ReverseMap();
+            CreateMap<Truck, TruckModel>().ReverseMap();
             //CreateMap<Palestrante, PalestranteDTO>()
             //    .ForMember(dest => dest.Eventos, opt =>
             //    {

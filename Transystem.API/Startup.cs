@@ -32,6 +32,7 @@ namespace Transystem.API
         {
             services.AddDbContext<TransystemContext>(x => x.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
             services.AddScoped<IClientRepository, ClientRepository>();
+            services.AddScoped<IDriverRepository, DriverRepository>();
             services.AddAutoMapper();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddCors();

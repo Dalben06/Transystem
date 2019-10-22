@@ -11,7 +11,7 @@ namespace Transystem.API.Models
         public DateTime CreateDate { get; set; }
         public DateTime UpdateDate { get; set; }
         public DateTime? DeleteDate { get; set; }
-        public bool IsDeleted { get; set; }
+        public int IsDeleted { get; set; }
         public string Name { get; set; }
         public string DocumentNumber { get; set; }
         public bool IsTypePerson { get; set; }

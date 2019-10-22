@@ -10,7 +10,7 @@ namespace Transystem.Domain.Entitys
         public override DateTime CreateDate { get => base.CreateDate; set => base.CreateDate = value; }
         public override DateTime UpdateDate { get => base.UpdateDate; set => base.UpdateDate = value; }
         public override DateTime? DeleteDate { get => base.DeleteDate; set => base.DeleteDate = value; }
-        public override bool IsDeleted { get => base.IsDeleted; set => base.IsDeleted = value; }
+        public override int IsDeleted { get => base.IsDeleted; set => base.IsDeleted = value; }
         public int DriverId { get; set; }
         public int ClientId { get; set; }
         public TypeOrder Type { get; set; }

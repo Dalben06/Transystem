@@ -17,6 +17,9 @@
     <ProjectReference Include="..\Transystem.Repository\Transystem.Repository.csproj" />
     <ProjectReference Include="..\Transystem.Domain\Transystem.Domain.csproj" />
   </ItemGroup>
+
+
+  <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="" appsettings_1development_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
   
 
 </Project>

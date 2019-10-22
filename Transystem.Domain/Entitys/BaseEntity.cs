@@ -11,6 +11,6 @@ namespace Transystem.Domain.Entitys
         public virtual DateTime CreateDate { get; set; }
         public virtual DateTime UpdateDate { get; set; }
         public virtual DateTime? DeleteDate { get; set; }
-        public virtual bool IsDeleted { get; set; }
+        public virtual int IsDeleted { get; set; }
     }
 }

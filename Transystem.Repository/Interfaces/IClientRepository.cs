@@ -8,10 +8,16 @@ namespace Transystem.Repository.Interfaces
 {
     public interface IClientRepository
     {
-        void add<T>(T entity) where T : class;
-        void Update<T>(T entity) where T : class;
-        void Delete<T>(T entity) where T : class;
+        void add(Client entity);
+        void Update(Client entity);
+        void Delete(Client entity);
+
+        Task<bool> SaveChangesAsync();
 
         Task<Client[]> GetAllClientAsync();
+
+        Task<Client> GetClientByIdAsync(int Id);
+
+        Task<Client[]> GetClientAsyncByName(string Name);
     }
 }

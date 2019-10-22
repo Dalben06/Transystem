@@ -10,29 +10,29 @@ using Transystem.Repository.Interfaces;
 
 namespace Transystem.Repository.Repositorys
 {
-    public class ClientRepository : IClientRepository
+    public class DriverRepository : IDriverRepository
     {
 
         public TransystemContext _context { get; }
 
-        public ClientRepository(TransystemContext context)
+        public DriverRepository(TransystemContext context)
         {
             _context = context;
             _context.ChangeTracker.QueryTrackingBehavior = QueryTrackingBehavior.NoTracking;
         }
 
 
-        public void add(Client entity)
+        public void add(Driver entity)
         {
             entity.CreateDate = entity.UpdateDate = DateTime.Now;
             _context.Add(entity);
         }
-        public void Update(Client entity) 
+        public void Update(Driver entity)
         {
             entity.UpdateDate = DateTime.Now;
             _context.Update(entity);
         }
-        public void Delete(Client entity)
+        public void Delete(Driver entity)
         {
             _context.Update(entity)
                 .Entity.IsDeleted = 1;
@@ -46,10 +46,10 @@ namespace Transystem.Repository.Repositorys
             return (await _context.SaveChangesAsync()) > 0;
         }
 
-        public async Task<Client[]> GetAllClientAsync()
+        public async Task<Driver[]> GetAllDriverAsync()
         {
-            IQueryable<Client> query = _context.Client
-                .Include(c => c.Addresses);
+            IQueryable<Driver> query = _context.Driver
+                .Include(c => c.trucks);
 
 
             query = query.OrderBy(x => x.Id).Where(x => x.IsDeleted == 0);
@@ -57,27 +57,25 @@ namespace Transystem.Repository.Repositorys
             return await query.ToArrayAsync();
         }
 
-        public async Task<Client> GetClientByIdAsync(int Id)
+        public async Task<Driver> GetDriverByIdAsync(int Id)
         {
-            IQueryable<Client> query = _context.Client
-                .Include(c => c.Addresses);
+            IQueryable<Driver> query = _context.Driver
+                .Include(c => c.trucks);
             query = query.Where(x => x.Id == Id);
             query = query.Where(x => x.IsDeleted == 0);
 
             return await query.FirstOrDefaultAsync();
         }
 
-        public async Task<Client[]> GetClientAsyncByName(string Name)
+        public async Task<Driver[]> GetDriverAsyncByName(string Name)
         {
-            IQueryable<Client> query = _context.Client
-                .Include(c => c.Addresses);
+            IQueryable<Driver> query = _context.Driver
+                .Include(c => c.trucks);
 
             query = query.Where(x => x.Name.ToLower().Contains(Name.ToLower()));
             query = query.Where(x => x.IsDeleted == 0);
 
             return await query.ToArrayAsync();
         }
-
-
     }
 }
