@@ -1,0 +1,58 @@
+
+<div class="container ">
+
+  <div class="d-flex m-10">
+    <div class="form-inline mr-auto">
+      <div class="form-group mb-2">
+        <input type="text" class="form-control mr-2" placeholder="Search" >
+      </div>
+    </div>
+    <div>
+      <button class="btn btn-outline-primary" >
+        <i class="fa fa-plus-circle "></i>&nbsp;
+        New Client
+      </button>
+    </div>
+  </div>
+
+
+
+
+  <table class="table table-striped">
+      <thead class="thead-light">
+        <tr>
+          
+          <th>#</th>
+          <th>Name</th>
+          <th>Document Number</th>
+          <th>Create Date</th>
+          <th>IsTypePerson</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let Client of ClientsFiltrados">
+          <td>{{ Client.id }}</td>
+          <td>{{ Client.name }}</td>
+          <td>{{ Client.documentNumber }}</td>
+          <td>{{ Client.createDate | DateTimeFormatPipe}}</td>
+          <td>{{ Client.isTypePerson ? "Fisica" : "Juridica" }}</td>
+
+          <td>
+            <div class="btn-group">
+              <button class="btn btn-sm btn-success" tooltip="Editar">
+                <i class="fa fa-edit">Edit</i>
+              </button>
+              <button class="btn btn-sm btn-danger" tooltip="Excluir">
+                <i class="fa fa-eraser">Delete</i>
+              </button>
+            </div>
+    
+          </td>
+        </tr>
+      </tbody>
+    </table>
+</div>
+
+
+
